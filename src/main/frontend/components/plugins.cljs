@@ -576,7 +576,11 @@
 
             {:title   (t :plugin/title "A - Z")
              :options {:on-click #(reset! *sort-by :letters)}
-             :icon    (ui/icon (aim-icon :letters))}])
+             :icon    (ui/icon (aim-icon :letters))}
+
+            {:title   (t :plugin/date-added)
+             :options {:on-click #(reset! *sort-by :date-added)}
+             :icon    (ui/icon (aim-icon :date-added))}])
          {}))
 
       ;; more - updater
@@ -652,7 +656,7 @@
     (rum/local false ::fetching)
     (rum/local "" ::search-key)
     (rum/local :plugins ::category)
-    (rum/local :downloads ::sort-by)                        ;; downloads / stars / letters / updates
+    (rum/local :downloads ::sort-by)                        ;; downloads / stars / letters / updates / date-added
     (rum/local :default ::filter-by)
     (rum/local nil ::error)
     (rum/local nil ::cached-query-flag)
